@@ -1,0 +1,71 @@
+[2021-04-25 10:08:27] [INFO] Scan date: 25-04-2021 10:08:27
+[2021-04-25 10:08:27] [INFO] Scanning C:/xampp/htdocs/assets2
+[2021-04-25 10:08:27] [INFO] Mapping and retrieving checksums, please wait
+[2021-04-25 10:08:37] [INFO] Verifying files checksum
+[2021-04-25 10:08:58] [INFO] Found 24162 files to check
+[2021-04-25 10:08:58] [INFO] Checking files
+[2021-04-25 10:09:01] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:09:01] [WARNING] Checksum: d1a321625012ca56336aeb26b2423d71
+[2021-04-25 10:09:01] [WARNING] File path: C:/xampp/htdocs/assets2\platform\core\base\resources\lang\en\base.php
+[2021-04-25 10:09:01] [DANGER] Evil code found: [!] Function (proc_close) [line 7] - Potentially dangerous function `proc_close` => proc_close()
+[2021-04-25 10:09:55] [SUCCESS] File 'C:/xampp/htdocs/assets2\platform\core\base\resources\lang\en\base.php' skipped!
+[2021-04-25 10:09:59] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:10:00] [WARNING] Checksum: 05852bfd56dde06c416b61009135af6a
+[2021-04-25 10:10:00] [WARNING] File path: C:/xampp/htdocs/assets2\platform\core\base\src\Supports\PclZip.php
+[2021-04-25 10:10:00] [DANGER] Evil code found: [!] Exploit (nano) [line 1740] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $p_options[PCLZIP_CB_PRE_ADD](PCLZIP_CB_PRE_ADD, $v_local_header) [!] Exploit (nano) [line 1886] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $p_options[PCLZIP_CB_POST_ADD](PCLZIP_CB_POST_ADD, $v_local_header) [!] Exploit (nano) [line 3431] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $p_options[PCLZIP_CB_PRE_EXTRACT](PCLZIP_CB_PRE_EXTRACT, $v_local_header) [!] Exploit (nano) [line 3490] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $p_options[PCLZIP_CB_POST_EXTRACT](PCLZIP_CB_POST_EXTRACT, $v_local_header) [!] Signature (e139a61c) [line 5413] - Malware Signature (hash: e139a61c) => php_uname()
+[2021-04-25 10:12:37] [SUCCESS] File 'C:/xampp/htdocs/assets2\platform\core\base\src\Supports\PclZip.php' skipped!
+[2021-04-25 10:12:37] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:12:37] [WARNING] Checksum: 0d7a7af1aef90fd07d20c7704441e658
+[2021-04-25 10:12:37] [WARNING] File path: C:/xampp/htdocs/assets2\platform\core\base\src\Supports\SystemManagement.php
+[2021-04-25 10:12:37] [DANGER] Evil code found: [!] Signature (e139a61c) [line 96] - Malware Signature (hash: e139a61c) => php_uname()
+[2021-04-25 10:13:42] [SUCCESS] File 'C:/xampp/htdocs/assets2\platform\core\base\src\Supports\SystemManagement.php' skipped!
+[2021-04-25 10:13:54] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:13:54] [WARNING] Checksum: f3b6f0b082b75725052b4405d54cfcbd
+[2021-04-25 10:13:54] [WARNING] File path: C:/xampp/htdocs/assets2\platform\plugins\backup\src\Supports\Backup.php
+[2021-04-25 10:13:54] [DANGER] Evil code found: [!] Function (system) - Potentially dangerous function `system` => system($sql); } $this->compressFileToZip($path, $file); if (file_exists($path . '.zip')) { chmod($path . '.zip', 0777); } return true; } public function compressFileToZip($path, $name): void { $filename = $path . '.zip'; if (class_exists('ZipArchive', false)) { $zip = new ZipArchive; if ($zip->open($filename, ZipArchive::CREATE) == true) { $zip->addFile($path . '.sql', $name . '.sql'); $zip->close(); } } else { $archive = new Zip($filename); $archive->add($path . '.sql', PCLZIP_OPT_REMOVE_PATH, 
+[2021-04-25 10:14:18] [SUCCESS] File 'C:/xampp/htdocs/assets2\platform\plugins\backup\src\Supports\Backup.php' skipped!
+[2021-04-25 10:14:24] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:24] [WARNING] Checksum: 504937860d5114fdd9e3e4d898c5e90a
+[2021-04-25 10:14:24] [WARNING] File path: C:/xampp/htdocs/assets2\platform\plugins\translation\src\Manager.php
+[2021-04-25 10:14:24] [DANGER] Evil code found: [!] Function (system) - Potentially dangerous function `system` => system('find ' . $this->app->langPath() . '/' . $dir . ' -type d -exec chmod 755 {} \;'); } $file = $dir . '/' . $folderName; } $path = $this->app['path.lang'] . '/' . $file . '.php'; $output = "<?php\n\nreturn " . VarExporter::export($translations) . ";\n"; $this->files->put($path, $output); } } Translation::ofTranslatedGroup($group)->update(['status' => Translation::STATUS_SAVED]); } } if ($json) { $tree = $this->makeTree(Translation::ofTranslatedGroup(self::JSON_GROUP)->orderByGroupKeys(Arr::
+[2021-04-25 10:14:27] [SUCCESS] File 'C:/xampp/htdocs/assets2\platform\plugins\translation\src\Manager.php' skipped!
+[2021-04-25 10:14:30] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:30] [WARNING] Checksum: 14fbbf67bd80b1b45081bde78fbca51c
+[2021-04-25 10:14:30] [WARNING] File path: C:/xampp/htdocs/assets2\public\vendor\core\core\base\libraries\tinymce\plugins\image\image.php
+[2021-04-25 10:14:30] [DANGER] Evil code found: [!] Function (exec) - Potentially dangerous function `exec` => exec(filename)[1]; } function display_thumbnails(file){ if(how_to_display_thumbnails == 'timthumb'){ return 'timthumb.php?src=' + file + '&w=130&h=90'; } if(how_to_display_thumbnails == 'generated'){ var ext = getFileExtension(file); var thumbfilename = file.replace('.' + ext, '') + thumbnail_postfix + '.' + ext; return thumbfilename; 
+[2021-04-25 10:14:31] [SUCCESS] File 'C:/xampp/htdocs/assets2\public\vendor\core\core\base\libraries\tinymce\plugins\image\image.php' skipped!
+[2021-04-25 10:14:31] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:31] [WARNING] Checksum: 13b2aa65596c4dbb9efea7355f57d6e9
+[2021-04-25 10:14:31] [WARNING] File path: C:/xampp/htdocs/assets2\public\vendor\core\core\base\libraries\tinymce\plugins\image\Image_lib.php
+[2021-04-25 10:14:31] [DANGER] Evil code found: [!] Function (exec) - Potentially dangerous function `exec` => exec($cmd, $output, $retval); if ($retval > 0) { $this->set_error('imglib_image_process_failed'); return FALSE; } @chmod($this->full_dst_path, FILE_WRITE_MODE); return TRUE; } function image_process_netpbm($action = 'resize') { if ($this->library_path == '') { $this->set_error('imglib_libpath_invalid'); return FALSE; } switch ($this->image_type) { case 1 : $cmd_in = 'giftopnm'; $cmd_out = 'ppmtogif'; break; case 2 : $cmd_in = 'jpegtopnm'; $cmd_out = 'ppmtojpeg'; break; case 3 : $cmd_in = 'pngtop
+[2021-04-25 10:14:33] [SUCCESS] File 'C:/xampp/htdocs/assets2\public\vendor\core\core\base\libraries\tinymce\plugins\image\Image_lib.php' skipped!
+[2021-04-25 10:14:34] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:34] [WARNING] Checksum: d1474e6093de36020ad6d545e891d62c
+[2021-04-25 10:14:34] [WARNING] File path: C:/xampp/htdocs/assets2\resources\lang\vendor\core\base\en\base.php
+[2021-04-25 10:14:34] [DANGER] Evil code found: [!] Function (proc_close) [line 7] - Potentially dangerous function `proc_close` => proc_close()
+[2021-04-25 10:14:36] [SUCCESS] File 'C:/xampp/htdocs/assets2\resources\lang\vendor\core\base\en\base.php' skipped!
+[2021-04-25 10:14:36] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:36] [WARNING] Checksum: f69413f197756642547f870500f88abb
+[2021-04-25 10:14:36] [WARNING] File path: C:/xampp/htdocs/assets2\resources\lang\vendor\core\base\vi\base.php
+[2021-04-25 10:14:36] [DANGER] Evil code found: [!] Function (proc_close) [line 7] - Potentially dangerous function `proc_close` => proc_close()
+[2021-04-25 10:14:37] [SUCCESS] File 'C:/xampp/htdocs/assets2\resources\lang\vendor\core\base\vi\base.php' skipped!
+[2021-04-25 10:14:41] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:41] [WARNING] Checksum: a0bb5b612d1506603da121ce15befbc0
+[2021-04-25 10:14:41] [WARNING] File path: C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\Api\Service.php
+[2021-04-25 10:14:41] [DANGER] Evil code found: [!] Exploit (nano) [line 90] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $mapping[$proto]($api, $endpoint) [!] Exploit (nano) [line 123] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $mapping[$protocol]($api) [!] Exploit (nano) [line 147] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $mapping[$proto]($api)
+[2021-04-25 10:14:42] [SUCCESS] File 'C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\Api\Service.php' skipped!
+[2021-04-25 10:14:43] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:43] [WARNING] Checksum: 63dd84a0a68210e703749517a627287d
+[2021-04-25 10:14:43] [WARNING] File path: C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\AwsClient.php
+[2021-04-25 10:14:43] [DANGER] Evil code found: [!] Exploit (nano) [line 215] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $args['with_resolved']($config)
+[2021-04-25 10:14:44] [SUCCESS] File 'C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\AwsClient.php' skipped!
+[2021-04-25 10:14:45] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:45] [WARNING] Checksum: 947d343251dda71815913d4aab401327
+[2021-04-25 10:14:45] [WARNING] File path: C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\ClientResolver.php
+[2021-04-25 10:14:45] [DANGER] Evil code found: [!] Exploit (nano) [line 295] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $a['default']($args) [!] Exploit (nano) [line 323] - Nano is a family of PHP webshells which are code golfed to be extremely stealthy and efficient => $a['fn']($args[$key], $args, $list)
+[2021-04-25 10:14:47] [SUCCESS] File 'C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\ClientResolver.php' skipped!
+[2021-04-25 10:14:49] [DANGER] PROBABLE MALWARE FOUND!
+[2021-04-25 10:14:49] [WARNING] Checksum: bc1c619038d34b2c1ec6134e5464086c
+[2021-04-25 10:14:49] [WARNING] File path: C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\Credentials\CredentialProvider.php
+[2021-04-25 10:14:49] [DANGER] Evil code found: [!] Function (shell_exec) - Potentially dangerous function `shell_exec` => shell_exec($credentialProcess); $processData = json_decode($json, true); if (isset($processData['Version'])) { if ($processData['Version'] !== 1) { return self::reject("credential_process does not return Version == 1"); } } if (!isset($processData['AccessKeyId']) || !isset($processData['SecretAccessKey'])) { return self::reject("credential_process does not return valid credentials"); } if (isset($processData['Expiration'])) { try { $expiration = new DateTimeResult($processData['Expiration']); } 
+[2021-04-25 10:14:51] [SUCCESS] File 'C:/xampp/htdocs/assets2\vendor\aws\aws-sdk-php\src\Credentials\CredentialProvider.php' skipped!

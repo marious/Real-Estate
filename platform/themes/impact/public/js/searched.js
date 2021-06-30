@@ -1,0 +1,1 @@
+$("select.nice-select").niceSelect();

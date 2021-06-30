@@ -1,0 +1,8 @@
+{
+    "name": "Impact Theme",
+    "namespace": "Theme\\Impact\\",
+    "description": "Leaders Theme",
+    "author": "Mohammed Raya",
+    "version": "1.0",
+    "required_plugins": []
+}

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'GESS';
+    src: url(../fonts/ge-ess-text-medium.woff2) format('woff2');
+}
+
+
+@font-face {
+    font-family: 'GESS Light';
+    src: url(../fonts/ge-ss-text-light.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'GESS Ultra Light';
+    src: url(../fonts/GESSTextUltraLight-UltraLight.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'GESS2';
+    src: url(../fonts/GE_SS_Two_Light.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'GESS2 Light';
+    src: url(../fonts/GE_SS_Two_Medium.woff2) format('woff2');
+}
+
+$primaryColor: #800230;
+
+$secondaryFont: "GESS", arial, sans-serif;
+$primaryFont: "GESS", arial, sans-serif !important;
