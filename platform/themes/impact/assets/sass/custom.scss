@@ -97,7 +97,7 @@ a:visited {
     position: relative;
 }
 .search-box .input-has-icon .form-control {
-    padding-right: 2.25em;
+    padding-right: 0.5em;
 }
 .search-box .form-control {
     width: 100%;
@@ -545,7 +545,7 @@ a:visited {
     align-items: flex-end;
 }
 .shop__sort .select--arrow .form-control {
-    padding: 0 10px 0 15px;
+    padding: 0 10px 0 20px;
     height: 32px;
     border-radius: 0;
     appearance: none;
@@ -699,7 +699,7 @@ a:visited {
 }
 
 .single.detail-wrapper {
-    margin-right: 10rem !important;
+    margin-right: 5rem !important;
     margin-left: auto !important;
 }
 
@@ -2302,7 +2302,7 @@ em.mm-counter+a.mm-fullsubopen+span {
 }
 
 #logo {
-    margin-top: 5px;
+    //margin-top: 5px;
 }
 #logo, #navigation {
     margin-left: 40px;
@@ -2325,8 +2325,8 @@ footer h4 {
     color: #fff;
 }
 footer .footer-logo {
-    padding:4px;
-    background-color: #fff;
+    //padding:4px;
+    //background-color: #fff;
 }
 footer li a:link,
 footer li a:visited {
@@ -2461,4 +2461,53 @@ footer .social-widget {
     div#logo img {
         padding-right:10px;
     }
+}
+
+.blog-container {
+    .blog-title h2 {
+        font-family: $thirdFont !important;
+    }
+    .blii .img img {
+        width: 100%;
+    }
+    .grid-h {
+        //border: 1px solid #ddd;
+        padding: 10px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    }
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    background-color: $primaryColor !important;
+    border-color: $primaryColor !important;
+    box-shadow: none !important;
+}
+.btn.focus, .btn:focus {
+    box-shadow: none !important;
+}
+
+.blog-info.details p{
+    direction: ltr !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .change-view,
+    .col-toggle-filter {
+        display: none;
+    }
+    .social-widget {
+        margin-top:40px;
+    }
+    .search-box-content .d-md-none {
+        display: none;
+    }
+}
+
+#subscribeEmail {
+    font-family: arial, verdana, sans-serif;
+}
+
+input.form-control {
+    font-family: arial, verdana, sans-serif;
 }

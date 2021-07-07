@@ -8,8 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="canonical" href="{{ url('/') }}">
     <base href="{{ url('/') }}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     {!! Theme::header() !!}
 </head>
 <body class="homepage-9 hp-6 hd-white rtl inner-pages">
@@ -59,7 +57,7 @@
                 <div class="right-side d-none d-none d-lg-none d-xl-flex">
                     <!-- Header Widget -->
                     <div class="">
-                        <a href="{{ route('public.account.register') }}" class="button border" title="إعلن مجانا"> إعلن مجانا<i class="fas fa-laptop-house ml-2"></i></a>
+                        <a href="{{ route('public.account.login') }}" class="button border" title="إعلن مجانا"> إعلن مجانا<i class="fas fa-laptop-house ml-2"></i></a>
                     </div>
                     <!-- Header Widget / End -->
                 </div>
@@ -80,13 +78,13 @@
 {{--                </div>--}}
                 <!-- Right Side Content / End -->
 
-                <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
-                    <!-- Header Widget -->
-                    <div class="sign-in mt-2">
-                        <div class=""><a href="{{ route('public.account.login') }}" title="تسجيل الدخول">تسجيل الدخول</a></div>
-                    </div>
-                    <!-- Header Widget / End -->
-                </div>
+{{--                <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">--}}
+{{--                    <!-- Header Widget -->--}}
+{{--                    <div class="sign-in mt-2">--}}
+{{--                        <div class=""><a href="{{ route('public.account.login') }}" title="تسجيل الدخول">تسجيل الدخول</a></div>--}}
+{{--                    </div>--}}
+{{--                    <!-- Header Widget / End -->--}}
+{{--                </div>--}}
                 <!-- Right Side Content / End -->
 
                 <!-- lang-wrap-->

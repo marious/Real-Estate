@@ -124,7 +124,10 @@ Theme::asset()->remove('range.js');
 
                 @if ($property->latitude && $property->longitude)
                 <div class="blog-info details mb-30">
-                    <h5 class="mb-4">الموقع على الخريطة</h5>
+                    <h5 class="mb-4">
+                        <i class="fa fa-map-marker"></i>
+                        الموقع على الخريطة
+                    </h5>
                     <div id="g-map" style="width: 100%;height:500px;"></div>
                 </div>
                 @endif

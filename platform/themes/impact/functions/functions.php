@@ -1,5 +1,13 @@
 <?php
 
+use Botble\Base\Enums\BaseStatusEnum;
+use Botble\RealEstate\Enums\ModerationStatusEnum;
+use Botble\RealEstate\Enums\ProjectStatusEnum;
+use Botble\RealEstate\Enums\PropertyStatusEnum;
+use Botble\RealEstate\Repositories\Interfaces\ProjectInterface;
+use Botble\RealEstate\Repositories\Interfaces\PropertyInterface;
+use Botble\Theme\Events\RenderingSiteMapEvent;
+
 register_page_template([
     'default' => 'Default',
     'homepage' => __('Homepage'),
@@ -457,3 +465,47 @@ function save_addition_city_fields($type, $request, $object)
         $object->save();
     }
 }
+
+
+Event::listen(RenderingSiteMapEvent::class, function () {
+
+    if (is_plugin_active('real-estate')) {
+        $projects = app(ProjectInterface::class)->advancedGet([
+            'condition' => [
+                ['re_projects.status', 'NOT_IN', [ProjectStatusEnum::NOT_AVAILABLE]],
+            ],
+            'with'      => ['slugable'],
+        ]);
+
+        SiteMapManager::add(route('public.projects'), '2019-12-09 00:00:00', '0.4', 'monthly');
+
+        foreach ($projects as $project) {
+            SiteMapManager::add($project->url, $project->updated_at, '0.8', 'daily');
+        }
+
+        $properties = app(PropertyInterface::class)->advancedGet([
+            'condition' => [
+                ['re_properties.status', 'NOT_IN', [PropertyStatusEnum::NOT_AVAILABLE]],
+                're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
+            ],
+            'with'      => ['slugable'],
+        ]);
+
+        SiteMapManager::add(route('public.properties'), '2019-12-09 00:00:00', '0.4', 'monthly');
+
+        foreach ($properties as $property) {
+            SiteMapManager::add($property->url, $property->updated_at, '0.8', 'daily');
+        }
+    }
+
+//    if (is_plugin_active('career')) {
+//        $careers = app(CareerInterface::class)->allBy(['status' => BaseStatusEnum::PUBLISHED]);
+//
+//        SiteMapManager::add(route('public.careers'), '2019-12-09 00:00:00', '0.4', 'monthly');
+//
+//        foreach ($careers as $career) {
+//            SiteMapManager::add($career->url, $career->updated_at, '0.6', 'daily');
+//        }
+//    }
+
+});

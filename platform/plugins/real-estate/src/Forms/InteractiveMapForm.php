@@ -8,11 +8,29 @@ use Botble\RealEstate\Forms\Fields\FontawesomeSelectField;
 use Botble\RealEstate\Http\Requests\InteractiveMapRequest;
 use Botble\RealEstate\Models\InteractiveMap;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
+use Exception;
+use Storage;
 
 class InteractiveMapForm extends FormAbstract
 {
     public function buildForm()
     {
+        $pinIcons = [];
+        try {
+            $path = public_path('storage/pin-icons');
+            $pinIcons = File::files($path);
+        } catch (Exception $exception) {
+        }
+//        if ($pinIcons) {
+//            echo '<select style="width: 400px;">';
+//            foreach ($pinIcons as $icon) {
+//                echo '<option style="background-image:url(/storage/pin-icons/'.$icon->getFilename().')"></option>';
+//            }
+//            echo '</select>';
+//        }
+//exit;
+
         $this
             ->setupModel(new InteractiveMap)
             ->setValidatorClass(InteractiveMapRequest::class)
@@ -77,7 +95,19 @@ Go here to get Longitude from address. </a>'
             ->add('rowClose22', 'html', [
                 'html' => '</div>',
             ])
-
+            ->add('images[]', 'mediaImages', [
+                'label'      => trans('plugins/real-estate::property.form.images'),
+                'label_attr' => ['class' => 'control-label'],
+                'values' => $this->getModel()->id ? $this->getModel()->images : [],
+            ])
+            ->addMetaBoxes([
+                'Pin Icon' => [
+                    'title' => 'Pin Icon',
+                    'content' => view('plugins/real-estate::partials.pin-icons',
+                        ['pinIcons' => $pinIcons, 'item' => $this->getModel()])->render(),
+                    'priority' => 1,
+                ]
+            ])
             ->add('status', 'customSelect', [
                 'label'      => trans('core/base::tables.status'),
                 'label_attr' => ['class' => 'control-label required'],

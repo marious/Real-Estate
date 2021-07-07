@@ -12,6 +12,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-zip": "*",
+        "appstract/laravel-opcache": "^4.0",
         "botble/api": "*@dev",
         "botble/menu": "*@dev",
         "botble/page": "*@dev",

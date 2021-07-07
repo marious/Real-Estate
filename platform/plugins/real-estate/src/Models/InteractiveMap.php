@@ -13,11 +13,11 @@ class InteractiveMap extends BaseModel
         'title',
         'description',
         'details_url',
-        'pic_icon',
+        'pin_icon',
         'price',
         'size',
         'latitude',
         'longitude',
-        'image',
+        'images',
     ];
 }

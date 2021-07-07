@@ -67,7 +67,15 @@
                         </div>
                     </form>
                 </div>
-                @include(Theme::getThemeNamespace() . '::views.real-estate.account.auth.includes.messages')
+{{--                @include(Theme::getThemeNamespace() . '::views.real-estate.account.auth.includes.messages')--}}
+                <div>
+                </div>
+                @if (session()->has('status'))
+                    <div class="alert alert-success">
+                        <span>{{ session('status') }}</span>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>

@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-lg-2 col-md-4 px-1">
                         <label for="select-type" class="control-label">الخيارات</label>
-                        <div data-text-default="Type, category..." class="dropdown mb-2 select-dropdown">
+                        <div data-text-default="النوع , التصنيف..." class="dropdown mb-2 select-dropdown">
                             <button type="button" id="dropdownMenuChoise" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary dropdown-toggle">
                                 <span>النوع , التصنيف</span></button>
                             <div aria-labelledby="dropdownMenuChoise" class="dropdown-menu keep-open"
@@ -150,7 +150,7 @@
                                         <div class="col-6" style="align-self: flex-end;">
                                             <div class="form-group"
                                             >
-                                                <div class="col-xs-auto"><button type="submit" class="btn btn-primary">إدخال</button> <button type="button" class="btn btn-primary bg-secondary float-left btn-clear">Clear</button></div>
+                                                <div class="col-xs-auto"><button type="submit" class="btn btn-primary">إدخال</button> <button type="button" class="btn btn-primary bg-secondary float-left btn-clear">مسح</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -164,7 +164,7 @@
                             <button type="button" id="dropdownMenuPrice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-secondary dropdown-toggle"><span>كل الأسعار </span></button>
                             <div aria-labelledby="dropdownMenuPrice" class="dropdown-menu" style="min-width: 25em; position: absolute; will-change: transform; top: 0px; transform: translate3d(0px, 34px, 0px);" x-placement="bottom-start">
                                 <div class="dropdown-item">
-                                    <div data-calc="[{&quot;number&quot;:1000000000,&quot;label&quot;:&quot;__value__ billion&quot;},{&quot;number&quot;:1000000,&quot;label&quot;:&quot;__value__ million&quot;},{&quot;number&quot;:1000,&quot;label&quot;:&quot;__value__ thousand&quot;},{&quot;number&quot;:0,&quot;label&quot;:&quot;__value__&quot;}]" data-all="All prices" class="form-group min-max-input">
+                                    <div data-calc="[{&quot;number&quot;:1000000000,&quot;label&quot;:&quot;__value__ billion&quot;},{&quot;number&quot;:1000000,&quot;label&quot;:&quot;__value__ million&quot;},{&quot;number&quot;:1000,&quot;label&quot;:&quot;__value__ thousand&quot;},{&quot;number&quot;:0,&quot;label&quot;:&quot;__value__&quot;}]" data-all="كل الأسعار" class="form-group min-max-input">
                                         <div class="row">
                                             <div class="col-5 pl-1"><label for="min_price" class="control-label">
                                                     السعر من
@@ -206,7 +206,7 @@
                                         <li data-value="300-400">300 m² - 400 m²</li>
                                         <li data-value="400-500">400 m² - 500 m²</li>
                                         <li data-value="500-0">&gt; 500 m²</li>
-                                        <li data-value="">ل المساحات</li>
+                                        <li data-value="">كل المساحات</li>
                                     </ul>
                                 </div>
                             </div>

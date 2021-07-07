@@ -44,7 +44,7 @@ class InteractiveMapTable extends TableAbstract
         $data = $this->table
             ->eloquent($this->query())
             ->editColumn('name', function ($item) {
-                return Html::link(route('re_interactive_map.edit', $item->id), $item->name);
+                return Html::link(route('interactiveMap.edit', $item->id), $item->title);
             })
             ->editColumn('checkbox', function ($item) {
                 return $this->getCheckbox($item->id);
@@ -52,7 +52,7 @@ class InteractiveMapTable extends TableAbstract
 
         return apply_filters(BASE_FILTER_GET_LIST_DATA, $data, $this->repository->getModel())
             ->addColumn('operations', function ($item) {
-                return $this->getOperations('re_interactive_map.edit', 're_interactive_map.destroy', $item);
+                return $this->getOperations('interactiveMap.edit', 'interactiveMap.destroy', $item);
             })
             ->escapeColumns([])
             ->make(true);

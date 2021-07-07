@@ -40,37 +40,37 @@ class PublicController extends Controller
         $newsletter = $this->newsletterRepository->getFirstBy(['email' => $request->input('email')]);
         if (!$newsletter) {
             $newsletter = $this->newsletterRepository->createOrUpdate($request->input());
-            if (config('plugins.newsletter.general.mailchimp.api_key') && config('plugins.newsletter.general.mailchimp.list_id')) {
-                Newsletter::subscribe($newsletter->email);
-            }
+//            if (config('plugins.newsletter.general.mailchimp.api_key') && config('plugins.newsletter.general.mailchimp.list_id')) {
+//                Newsletter::subscribe($newsletter->email);
+//            }
 
-            if (config('plugins.newsletter.general.sendgrid.api_key') && config('plugins.newsletter.general.sendgrid.list_id')) {
-                $sg = new SendGrid(config('plugins.newsletter.general.sendgrid.api_key'));
-
-                $requestBody = json_decode(
-                    '{
-                        "list_ids": [
-                            "' . config('plugins.newsletter.general.sendgrid.list_id') . '"
-                        ],
-                        "contacts": [
-                            {
-                                "first_name": "' . $request->input('first_name') . '",
-                                "last_name": "' . $request->input('last_name') . '",
-                                "email": "' . $request->input('email') . '"
-                            }
-                        ]
-                    }'
-                );
-
-                try {
-                    $sg->client->marketing()->contacts()->put($requestBody);
-                } catch (Exception $exception) {
-                    info('Caught exception: ' . $exception->getMessage());
-                }
-            }
+//            if (config('plugins.newsletter.general.sendgrid.api_key') && config('plugins.newsletter.general.sendgrid.list_id')) {
+//                $sg = new SendGrid(config('plugins.newsletter.general.sendgrid.api_key'));
+//
+//                $requestBody = json_decode(
+//                    '{
+//                        "list_ids": [
+//                            "' . config('plugins.newsletter.general.sendgrid.list_id') . '"
+//                        ],
+//                        "contacts": [
+//                            {
+//                                "first_name": "' . $request->input('first_name') . '",
+//                                "last_name": "' . $request->input('last_name') . '",
+//                                "email": "' . $request->input('email') . '"
+//                            }
+//                        ]
+//                    }'
+//                );
+//
+//                try {
+//                    $sg->client->marketing()->contacts()->put($requestBody);
+//                } catch (Exception $exception) {
+//                    info('Caught exception: ' . $exception->getMessage());
+//                }
+//            }
         }
 
-        event(new SubscribeNewsletterEvent($newsletter));
+       event(new SubscribeNewsletterEvent($newsletter));
 
         return $response->setMessage(__('Subscribe to newsletter successfully!'));
     }

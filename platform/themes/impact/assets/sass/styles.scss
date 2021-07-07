@@ -3669,7 +3669,7 @@ section.counterup {
 .first-footer .top-footer {
   background: #303441;
   color: #333;
-  padding: 6rem 0;
+  padding: 2rem 0 8rem 0;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -9504,7 +9504,7 @@ section.single-proper {
 }
 
 section.headings-2 {
-  padding: 60px 0 55px 0;
+  padding: 60px 0 24px 0;
   background: #f7f7f7;
 }
 
@@ -9523,6 +9523,7 @@ section.headings-2 {
 }
 
 .inner-pages .headings-2 .listing-title-bar h4 {
+    font-family: arial, sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: $primaryColor;
@@ -9540,7 +9541,6 @@ section.headings-2 {
   font-size: 14px;
   background: $primaryColor;
   color: #fff;
-  border: 1px solid #fff;
   padding: 5px 15px;
   border-radius: 50px;
   top: -3px;
@@ -9980,11 +9980,19 @@ div.datedropper.my-style.picker-lkd .pick-submit {
 .widget-boxed {
   background: #fff;
 }
-
+.single.widget {
+    padding: 20px;
+    box-shadow: 0 0 10px 1px rgb(71 85 95 / 8%);
+    //margin-top: 102px;
+}
+.single-proper .headings-2{
+    padding: 20px !important;
+    box-shadow: 0 0 10px 1px rgb(71 85 95 / 8%);
+    margin-bottom:20px;
+}
 .agent-contact-form-sidebar {
   width: 100%;
   padding-top: 20px;
-  border-top: 1px solid #eeeeee;
 }
 
 .agent-contact-form-sidebar h4 {

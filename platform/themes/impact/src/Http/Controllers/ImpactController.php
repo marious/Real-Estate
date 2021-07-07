@@ -53,7 +53,7 @@ class ImpactController extends PublicController
                         're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
                     ],
                     theme_option('number_of_properties_for_sale', 8),
-                    ['currency']
+                    ['currency', 'city', 'slugable']
                 );
                 break;
             case 'sale':
@@ -65,7 +65,7 @@ class ImpactController extends PublicController
                         're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
                     ],
                     theme_option('number_of_properties_for_sale', 8),
-                    ['currency']
+                    ['currency', 'city', 'slugable']
                 );
                 break;
             case 'project-properties-for-sell':
@@ -77,7 +77,7 @@ class ImpactController extends PublicController
                         're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
                     ],
                     theme_option('number_of_properties_for_sale', 8),
-                    ['currency']
+                    ['currency', 'city', 'slugable']
                 );
                 break;
             case 'project-properties-for-rent':
@@ -89,7 +89,7 @@ class ImpactController extends PublicController
                         're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
                     ],
                     theme_option('number_of_properties_for_sale', 3),
-                    ['currency']
+                    ['currency', 'city', 'slugable']
                 );
                 break;
         }
@@ -102,11 +102,20 @@ class ImpactController extends PublicController
 
     public function ajaxPropertiesMap(BaseHttpResponse $response)
     {
-        $properties = app(PropertyInterface::class)->all();
-
+        $properties = app(PropertyInterface::class)->getPropertiesByConditions(
+            [
+//                're_properties.is_featured'       => true,
+//                're_properties.type'              => PropertyTypeEnum::RENT,
+                ['re_properties.status', 'NOT_IN', [PropertyStatusEnum::NOT_AVAILABLE]],
+                're_properties.moderation_status' => ModerationStatusEnum::APPROVED,
+            ],
+            15,
+            ['currency', 'city', 'slugable']
+        );
+//dd($properties[0]->url);
         return $response
-            ->setData(PropertyResource::collection($properties))
-            ->toApiResponse();
+                ->setData(PropertyResource::collection($properties))
+                ->toApiResponse();
     }
 
     public function contact()
@@ -176,5 +185,15 @@ class ImpactController extends PublicController
         return Theme::scope('land')->render();
     }
 
+    public function getSiteMap()
+    {
+        return parent::getSiteMap();
+    }
+
+
+    public function careers()
+    {
+        return Theme::scope('careers')->render();
+    }
 
 }

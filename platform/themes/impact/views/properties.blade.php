@@ -45,13 +45,11 @@
                                                     <div class="select--arrow">
                                                         <select name="sort_by" id="sort-by" class="form-control">
                                                             <option value="">ترتيب</option>
-                                                            <option value="">Default</option>
-                                                            <option value="date_asc">Oldest</option>
-                                                            <option value="date_desc">Newest</option>
-                                                            <option value="price_asc">Price: low to high</option>
-                                                            <option value="price_desc">Price: high to low</option>
-                                                            <option value="name_asc">Name: A-Z</option>
-                                                            <option value="name_desc">Name: Z-A</option>
+                                                            <option value="">الافتراضى</option>
+                                                            <option value="date_asc">الأقدم</option>
+                                                            <option value="date_desc">الأحدث</option>
+                                                            <option value="price_asc">السعر : الأقل للأعلى</option>
+                                                            <option value="price_desc">السعر : الأعلى للأقل</option>
                                                         </select>
                                                         <i class="fas fa-angle-down"></i>
                                                     </div>
@@ -107,19 +105,19 @@
                                                         <ul class="homes-list clearfix">
                                                             @if ($property->number_bedroom)
                                                                 <li>
-                                                                    <i class="flaticon-bed"></i>
+                                                                    <i class="fa fa-bed"></i>
                                                                     <span> {{ $property->number_bedroom }} غرف نوم</span>
                                                                 </li>
                                                             @endif
                                                             @if ($property->number_bathroom)
                                                                 <li>
-                                                                    <i class="flaticon-shower"></i>
+                                                                    <i class="fa fa-bath"></i>
                                                                     <span> {{ $property->number_bathroom }} حمام</span>
                                                                 </li>
                                                             @endif
                                                             @if ($property->square)
                                                                 <li>
-                                                                    <i class="flaticon-design-tool"></i>
+                                                                    <i class="fa fa-object-group"></i>
                                                                     <span> {{ $property->square }} متر</span>
                                                                 </li>
                                                             @endif

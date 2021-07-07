@@ -59,12 +59,22 @@ aside::-webkit-scrollbar-thumb:hover {
 
 }
 .home-page aside .opening-hours .section-options .input_group input:checked+label{
+    //background-color:#b1def9;
+    &:before {
+        border-color: $primaryColor;
+    }
+    //border:2px dashed $primaryColor
+}
+
+.home-page aside .opening-hours .building-options .input_group input:checked+label,
+.home-page aside .opening-hours .type-options .input_group input:checked+label,
+.home-page aside .opening-hours .category-options .input_group input:checked+label {
     background-color:#b1def9;
-    border:2px dashed $primaryColor
+    border:2px dashed $primaryColor;
 }
 .home-page aside .deliver_date .section-options .input_group input:checked+label{
-    background-color:#b1def9;
-    border:2px dashed $primaryColor
+    //background-color:#b1def9;
+    //border:2px dashed $primaryColor
 }
 .home-page aside .deliver_date .section-options .input_group{width:60px;height:40px}
 .home-page aside .deliver_date .section-options label{padding:0;position:relative;width:100%;height:100%;border-radius:10px;border:2px dashed #d8d5d3;background-color:#fff;cursor:pointer;line-height:40px;text-align:center}
@@ -92,7 +102,7 @@ aside::-webkit-scrollbar-thumb:hover {
     justify-content: space-between;
 }
 .section-search-title h5 {
-    font-size: 14px;
+    font-size: 15px;
     color: $primaryColor;
     padding: 0 0 5px;
     margin: 0;
@@ -112,8 +122,7 @@ aside::-webkit-scrollbar-thumb:hover {
     margin: 0;
 }
 .home-page aside .project-main .section-options .input_group label {
-    font-family: 'Almarai', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: #090d3e;
     position: relative;
     width: 100%;
@@ -131,8 +140,7 @@ aside::-webkit-scrollbar-thumb:hover {
 }
 
 .home-page aside .section-title h5 {
-    font-family: 'Almarai', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: $primaryColor;
     font-weight: 600;
     padding: 0 0 5px;
@@ -152,8 +160,7 @@ aside::-webkit-scrollbar-thumb:hover {
 }
 
 .home-page aside .project-type .section-options .input_group label {
-    font-family: 'Almarai', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: #090d3e;
     position: relative;
     width: 100%;
@@ -203,8 +210,7 @@ aside::-webkit-scrollbar-thumb:hover {
     width: 80% !important;
 }
 .home-page aside .realestate-type .section-options label small {
-    font-family: 'Almarai', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: #253a79;
     text-align: center;
     padding: 0 10px;
@@ -244,8 +250,7 @@ aside::-webkit-scrollbar-thumb:hover {
 }
 
 .home-page aside .location .section-options .input_group:nth-of-type(1) label {
-    font-family: 'Almarai', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: #253a79;
     position: relative;
     width: 90%;
@@ -271,7 +276,7 @@ aside::-webkit-scrollbar-thumb:hover {
 
 .home-page aside .location .section-options .input_group label {
     font-family: $primaryFont;
-    font-size: 14px;
+    font-size: 15px;
     color: #253a79;
     position: relative;
     width: 90%;

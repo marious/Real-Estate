@@ -198,7 +198,7 @@ class PublicController extends Controller
 
         $property = $propertyRepository->getProperty(
             $slug->reference_id,
-            ['features', 'project', 'currency', 'author', 'category', 'facilities']
+            ['features', 'project', 'currency', 'author', 'category', 'facilities', 'slugable']
         );
 
         if (!$property) {
@@ -281,9 +281,10 @@ class PublicController extends Controller
                 'current_paged' => $request->input('page', 1),
             ],
             'order_by' => ['re_projects.created_at' => 'DESC'],
+            'with' => 'slugable'
         ];
 
-        $projects = $projectRepository->getProjects($filters, $params);
+        $projects = $projectRepository->getProjects($filters, $params,);
 
         Theme::breadcrumb()
             ->add(__('Home'), url('/'))
@@ -342,6 +343,7 @@ class PublicController extends Controller
                 'current_paged' => $request->input('page', 1),
             ],
             'order_by' => ['re_properties.created_at' => 'DESC'],
+            'with' => 'slugable',
         ];
 
         $properties = $propertyRepository->getProperties($filters, $params);

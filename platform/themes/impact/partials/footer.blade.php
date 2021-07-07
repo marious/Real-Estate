@@ -7,7 +7,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="netabout">
                         <a href="" class="logo">
-                            <img src="{{ RvMedia::getImageUrl(theme_option('logo')) }}" alt="Impact Investment" class="footer-logo">
+                            <img src="/storage/Impact-logo-wt.png" alt="Impact Investment" class="footer-logo">
                         </a>
                     </div>
                     <div class="contactus">
@@ -24,7 +24,7 @@
                                 <div class="info">
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                     <p class="in-p">
-                                        <a href="tel:{{ theme_option('hotline') }}">{{ theme_option('hotline') }}</a>
+                                        <a href="tel:{{ theme_option('hotline') }}" title="رقم الهاتق">{{ theme_option('hotline') }}</a>
                                     </p>
                                 </div>
                             </li>
@@ -32,7 +32,7 @@
                                 <div class="info">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                     <p class="in-p ti">
-                                        <a href="mailto:{{ theme_option('email') }}">{{ theme_option('email') }}</a>
+                                        <a href="mailto:{{ theme_option('email') }}" title="البريد الالكترونى">{{ theme_option('email') }}</a>
                                     </p>
                                 </div>
                             </li>
@@ -45,31 +45,44 @@
                     <div class="footer-widget social-widget">
                         <h4>تابعنا </h4>
                         <ul class="social-icon-one">
-                            <li><a href="https://www.facebook.com/ImpactInvestmentseg"><span class="fab fa-facebook-f"></span></a></li>
-                            <li><a href="https://lnkd.in/dGgnkU9"><span class="fab fa-instagram"></span></a></li>
-                            <li><a href=""><span class="fab fa-youtube"></span></a></li>
-                            <li><a href="https://lnkd.in/dG7kgi9"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="https://lnkd.in/dqDtm4m"><span class="fab fa-telegram"></span></a></li>
+                            <li><a href="https://www.facebook.com/ImpactInvestmentseg" title="فيسبوك"><span class="fab fa-facebook-f"></span></a></li>
+                            <li><a href="https://lnkd.in/dGgnkU9" title="انستجرام"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="" title="يوتيوب"><span class="fab fa-youtube"></span></a></li>
+                            <li><a href="https://lnkd.in/dG7kgi9" title="تويتر"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://lnkd.in/dqDtm4m" title="لينكدان"><span class="fab fa-telegram"></span></a></li>
 
                         </ul>
 
                     </div>
                 </div>
-
+                @if (is_plugin_active('newsletter') && theme_option('enable_newsletter_popup', 'yes') === 'yes')
                 <div class="col-lg-4 col-md-6">
                     <div class="newsletters">
-                        <h3>النشرة البريدية</h3>
-                        <p>اشترك الأن فى النشرة البريدية ليصلك كل جديد</p>
+                        <h3>النشرة العقارية</h3>
+                        <p>اشترك الأن فى النشرة العقارية ليصلك كل جديد</p>
                     </div>
-                    <form class="bloq-email mailchimp form-inline" method="post">
+                    <form class="bloq-email mailchimp form-inline newsletter-form" method="post" action="{{ route('public.newsletter.subscribe') }}">
+                        @csrf
                         <label for="subscribeEmail" class="error"></label>
                         <div class="email">
-                            <input type="email" id="subscribeEmail" name="EMAIL" placeholder="البريد الالكترونى">
-                            <input type="submit" value="إشتراك">
-                            <p class="subscription-success"></p>
+                            <div class="alert alert-success text-success text-right" style="display: none;">
+                                <span>تم الإرسال بنجاح</span>
+                            </div>
+                            <div class="alert alert-danger text-danger text-right" style="display: none;">
+                                <span></span>
+                            </div>
+
+                            <input type="email" id="subscribeEmail" name="email" placeholder="البريد الالكترونى">
+                            @if (setting('enable_captcha') && is_plugin_active('captcha'))
+                                <div class="form-group">
+                                    {!! Captcha::display() !!}
+                                </div>
+                            @endif
+                            <button type="submit" class="btn btn-block mt-2">إشتراك</button>
                         </div>
                     </form>
                 </div>
+                    @endif
             </div>
         </div>
     </div>

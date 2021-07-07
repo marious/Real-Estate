@@ -46,6 +46,7 @@
 
     <div id="stack-footer">
         @stack('footer')
+        @stack('scripts')
     </div>
 
     {!! apply_filters(BASE_FILTER_FOOTER_LAYOUT_TEMPLATE, null) !!}

@@ -18,7 +18,6 @@ use Illuminate\Support\Arr;
 class Property extends BaseModel
 {
     use EnumCastable;
-
     /**
      * The database table used by the model.
      *

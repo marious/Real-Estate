@@ -197,4 +197,14 @@ return [
         'name' => 'InteractiveMap',
         'flag' => 'interactiveMap.index',
     ],
+    [
+        'name' => 'Edit',
+        'flag' => 'interactiveMap.edit',
+        'parent_flag' => 'interactiveMap.index'
+    ],
+    [
+        'name' => 'Delete',
+        'flag' => 'interactiveMap.destroy',
+        'parent_flag' => 'interactiveMap.index'
+    ],
 ];

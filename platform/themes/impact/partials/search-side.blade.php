@@ -11,18 +11,18 @@
 $cities = app(CityInterface::class)->pluck('name', 'id');
 
 $buildingImages = [
-    'flat' => 'https://booking-realestate.com/files/thumbnail/group_87.png',
-    'villa' => 'https://booking-realestate.com/files/thumbnail/group_87.png',
-    'offices' => 'https://booking-realestate.com/files/thumbnail/group_88.png',
-    'penthouse' => 'https://booking-realestate.com/files/thumbnail/group_84.png',
-    'duplex' => 'https://booking-realestate.com/files/thumbnail/group_86.png',
-    'chamber' => 'https://booking-realestate.com/files/thumbnail/group_83.png',
-    'studio' => 'https://booking-realestate.com/files/thumbnail/group_91.png',
-    'chalet' => 'https://booking-realestate.com/files/thumbnail/group_82.png',
-    'buildings' => 'https://booking-realestate.com/files/thumbnail/group_92.png',
-    'shops' => 'https://booking-realestate.com/files/thumbnail/group_89.png',
-    'factories' => 'https://booking-realestate.com/files/thumbnail/group_85%20(1).png',
-    'land' => 'https://booking-realestate.com/files/thumbnail/group_81.png',
+    'flat' => '/storage/filters/flat.png',
+    'villa' => '/storage/filters/villa.png',
+    'offices' => '/storage/filters/offices.png',
+    'penthouse' => '/storage/filters/penthouse.png',
+    'duplex' => '/storage/filters/duplex.png',
+    'chamber' => '/storage/filters/chamber.png',
+    'studio' =>  '/storage/filters/studio.png',
+    'chalet' => '/storage/filters/chalet.png',
+    'buildings' =>  '/storage/filters/buildings.png',
+    'shops' => '/storage/filters/shops.png',
+    'factories' => '/storage/filters/factories.png',
+    'land' =>  '/storage/filters/land.png',
 ];
 @endphp
 <div class="home-page">
@@ -33,7 +33,7 @@ $buildingImages = [
                 <div class="section-search-title">
                     <h5><span class="im im-icon-Filter-2"></span>تصنيف</h5>
                 </div>
-                <div class="section-options justify-content-between ">
+                <div class="section-options category-options justify-content-between ">
                     @foreach($categories as $k => $category)
                     <div class="input_group">
                         <input class="form-check-input" type="checkbox"
@@ -50,7 +50,7 @@ $buildingImages = [
                 <div class="section-search-title">
                     <h5><span class="im im-icon-Filter-2"></span>نوع المشروع</h5>
                 </div>
-                <div class="section-options justify-content-between">
+                <div class="section-options type-options justify-content-between">
                     @foreach ($types as $k => $type)
                     <div class="input_group">
                         <input  class="form-check-input" type="checkbox"
@@ -70,7 +70,7 @@ $buildingImages = [
                     <i class="fas fa-angle-down"></i>
                 </span>
                 </div>
-                <div class="section-options">
+                <div class="section-options building-options">
                     @foreach ($buildingImages as $k => $image)
                     <div class="input_group">
                         <input type="checkbox" name="building_type[]"

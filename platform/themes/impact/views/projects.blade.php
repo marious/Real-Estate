@@ -47,20 +47,16 @@
                                                     <div class="select--arrow">
                                                         <select name="sort_by" id="sort-by" class="form-control">
                                                             <option value="">ترتيب</option>
-                                                            <option value="">Default</option>
-                                                            <option value="date_asc">Oldest</option>
-                                                            <option value="date_desc">Newest</option>
-                                                            <option value="price_asc">Price: low to high</option>
-                                                            <option value="price_desc">Price: high to low</option>
-                                                            <option value="name_asc">Name: A-Z</option>
-                                                            <option value="name_desc">Name: Z-A</option>
+                                                            <option value="">الافتراضى</option>
+                                                            <option value="date_asc">الأقدم</option>
+                                                            <option value="date_desc">الأحدث</option>
+                                                            <option value="price_asc">السعر : الأقل للأعلى</option>
+                                                            <option value="price_desc">السعر : الأعلى للأقل</option>
                                                         </select>
                                                         <i class="fas fa-angle-down"></i>
                                                     </div>
                                                 </div>
-                                                <div class="change-view ml-2" style="align-self: center">
-                                                    <i class="fas fa-map-marker-alt view-type-map active"></i>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>

@@ -3,7 +3,7 @@
     "namespace": "Botble\\Newsletter\\",
     "provider": "Botble\\Newsletter\\Providers\\NewsletterServiceProvider",
     "author": "Botble Technologies",
-    "url": "https://botble.com",
+    "url": "",
     "version": "5.8",
     "description": "Newsletter"
 }

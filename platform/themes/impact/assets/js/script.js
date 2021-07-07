@@ -505,6 +505,49 @@ jQuery(document).on('ready', function ($) {
             $(form).find('.text-danger').html(message).show();
         };
 
+        $(document).on('click', '.newsletter-form button[type=submit]', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            let _self = $(this);
+
+            _self.prop('disabled', true).html('<i class="fa fa-spin fa-spinner"></i>');
+
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: _self.closest('form').prop('action'),
+                data: new FormData(_self.closest('form')[0]),
+                contentType: false,
+                processData: false,
+                success: res => {
+                    console.log('hi');
+                    $(this).closest('form').find('.text-success').html('').hide();
+                    $(this).closest('form').find('.text-danger').html('').hide();
+
+                    _self.prop('disabled', false).html('إشتراك');
+
+                    if (typeof refreshRecaptcha !== 'undefined') {
+                        refreshRecaptcha();
+                    }
+
+                    if (res.error) {
+                        showError(res.message);
+                        return false;
+                    }
+
+                    _self.closest('form').find('input[type=email]').val('');
+                    _self.closest('form').find('.text-success').html(res.message).show();
+                },
+                error: res => {
+                    if (typeof refreshRecaptcha !== 'undefined') {
+                        refreshRecaptcha();
+                    }
+                    _self.prop('disabled', false).html('إشتراك');
+                    handleError(res, $(this).closest('form'));
+                }
+            });
+        });
 
 
 
@@ -1188,3 +1231,5 @@ if (priceSlider.length >= 1) {
         });
     }
 }
+
+

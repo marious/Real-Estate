@@ -94,6 +94,7 @@ class RegisterController extends Controller
         }
 
         $account->confirmed_at = Carbon::now(config('app.timezone'));
+        $account->credits = 20;
         $this->accountRepository->createOrUpdate($account);
 
         $this->guard()->login($account);
@@ -168,11 +169,16 @@ class RegisterController extends Controller
 
         if (setting('verify_account_email', config('plugins.real-estate.real-estate.verify_email'))) {
             $this->sendConfirmationToUser($account);
+
             return $this->registered($request, $account)
-                ?: $response->setNextUrl($this->redirectPath())->setMessage(trans('plugins/real-estate::account.confirmation_info'));
+                ?: redirect()->back()->with('status', 'تم التسجيل بنجاح برجاء مراجعة بريدكم الالكترونى لتفعيل الاشتراك');
+
+//            return $this->registered($request, $account)
+//                ?: $response->setNextUrl($this->redirectPath())->setMessage(trans('plugins/real-estate::account.confirmation_info'));
         }
 
         $account->confirmed_at = now(config('app.timezone'));
+        //$account->credits = 20;
         $this->accountRepository->createOrUpdate($account);
         $this->guard()->login($account);
 
